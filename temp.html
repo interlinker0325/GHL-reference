@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticker Animation</title>
+  <style>
+    *, *::before, *::after {
+      -webkit-box-sizing: padding-box;
+      box-sizing: padding-box;
+    }
+
+    body {
+      background: #CCC;
+    }
+
+    body,
+    div,
+    ul,
+    li,
+    p {
+      margin: 0;
+      padding: 0;
+      font-family: verdana;
+      font-size: 16pt;
+    }
+
+    .tickerwrapper {
+  /* the outer div */
+      position: relative;
+      top: 30px;
+      left: 0%;
+      border: 1px solid #444;
+      background: #fff;
+      width: 99.9%;
+      height: 30px;
+      overflow: hidden;
+      cursor: pointer;
+      transform: rotate(-3deg); /* Apply a 10-degree rotation counterclockwise */
+      transform-origin: top left; /* Adjust the pivot point */
+    }
+
+    ul.list {
+      position: relative;
+      display: inline-block;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul.list.cloned {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+
+    ul.list li {
+      float: left;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tickerwrapper">
+    <ul class='list'>
+      <li class='listitem'><span>✨ Rapid Prototyping</span></li>
+      <li class='listitem'><span>✨ Visual Design</span></li>
+      <li class='listitem'><span>✨ User Testing</span></li>
+      <li class='listitem'><span>✨ Desgin  Systems</span></li>
+      <li class='listitem'><span>✨ Graphic Design</span></li>
+      <li class='listitem'><span>✨ BBC Studios</span></li>
+      <li class='listitem'><span>✨ Rapid Prototyping</span></li>
+      <li class='listitem'><span>✨ Visual Design</span></li>
+      <li class='listitem'><span>✨ User Testing</span></li>
+      <li class='listitem'><span>✨ Desgin  Systems</span></li>
+      <li class='listitem'><span>✨ Graphic Design</span></li>
+      <li class='listitem'><span>✨ BBC Studios</span></li>
+      <li class='listitem'><span>✨ Rapid Prototyping</span></li>
+      <li class='listitem'><span>✨ Visual Design</span></li>
+      <li class='listitem'><span>✨ User Testing</span></li>
+    </ul>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    var $tickerWrapper = document.querySelector(".tickerwrapper");
+    var $list = $tickerWrapper.querySelector("ul.list");
+    var $clonedList = $list.cloneNode(true);
+    var listWidth = 10;
+
+    Array.from($list.children).forEach(function (listItem) {
+      listWidth += listItem.offsetWidth;
+    });
+
+    var endPos = $tickerWrapper.offsetWidth - listWidth;
+
+    $list.style.width = listWidth + "px";
+    $clonedList.classList.add("cloned");
+    $clonedList.style.width = listWidth + "px";
+    $tickerWrapper.appendChild($clonedList);
+
+    // GSAP Animation
+    var infinite = gsap.timeline({ repeat: -1, paused: true });
+    var time = 40;
+
+    infinite
+      .fromTo($list, { x: 0 }, { x: -listWidth, duration: time, ease: "none" }, 0)
+      .fromTo($clonedList, { x: listWidth }, { x: 0, duration: time, ease: "none" }, 0)
+      .set($list, { x: listWidth })
+      .to($clonedList, { x: -listWidth, duration: time, ease: "none" }, time)
+      .to($list, { x: 0, duration: time, ease: "none" }, time)
+      .progress(1)
+      .progress(0)
+      .play();
+
+    // Pause/Play on hover
+    $tickerWrapper.addEventListener("mouseenter", function () {
+      infinite.pause();
+    });
+
+    $tickerWrapper.addEventListener("mouseleave", function () {
+      infinite.play();
+    });
+  </script>
+</body>
+</html>

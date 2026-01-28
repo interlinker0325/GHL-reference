@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Time in EST</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .current-time {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Current Time in EST</h1>
+    <div class="current-time"></div> <!-- This is where the current EST time will be displayed -->
+
+    <script>
+        function getCurrentESTTime() {
+            const now = new Date();
+            
+            // Get UTC time
+            const utcHours = now.getUTCHours();
+            const utcMinutes = now.getUTCMinutes();
+            const utcSeconds = now.getUTCSeconds(); // Get seconds
+            
+            // Convert UTC to EST (UTC - 5)
+            const estOffset = -5;
+            const estHours = (utcHours + estOffset + 24) % 24; // Ensure hours wrap around
+            
+            // Format the time
+            const formattedHours = String(estHours).padStart(2, '0'); // Two-digit format
+            const formattedMinutes = String(utcMinutes).padStart(2, '0'); // Two-digit format
+            const formattedSeconds = String(utcSeconds).padStart(2, '0'); // Two-digit format for seconds
+            
+            // Create a string for the current EST time including seconds
+            return `${formattedHours}:${formattedMinutes}:${formattedSeconds} EST`;
+        }
+
+        // Function to update the time display
+        function updateCurrentTime() {
+            const timeElement = document.querySelector('.current-time');
+            if (timeElement) {
+                timeElement.textContent = getCurrentESTTime();
+            }
+        }
+
+        // Call the update function when the page loads
+        document.addEventListener('DOMContentLoaded', updateCurrentTime);
+        
+        // Optional: Update the time every second
+        setInterval(updateCurrentTime, 1000); // Update every second
+    </script>
+</body>
+</html>

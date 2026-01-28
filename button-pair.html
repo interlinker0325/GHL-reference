@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .full-button {
+            display: flex;
+            justify-content: left; /* Default alignment */
+            gap: 30px;
+            flex-wrap: wrap; /* Allow wrapping of buttons */
+        }
+
+        .left-button {
+            position: relative;
+            display: inline-block;
+            background-color: #df3627;
+            color: white;
+            font-family: "Segoe UI", sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            padding: 14px 28px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: button-shimmer 2s infinite;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .left-button:hover {
+            background-color: #df3627;
+            animation: button-particles 1s ease-in-out infinite;
+            transform: translateY(-2px);
+        }
+
+        .left-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .right-button { 
+            position: relative;
+            display: inline-block;
+            background-color: white;
+            color: black;
+            font-family: "Segoe UI", sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            padding: 14px 28px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: button-shimmer 2s infinite;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .right-button:hover {
+            background-color: white;
+            animation: button-particles 1s ease-in-out infinite;
+            transform: translateY(-2px);
+        }
+
+        .right-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes button-shimmer {
+            0% {
+                background-position: left top;
+            }
+            100% {
+                background-position: right bottom;
+            }
+        }
+
+        @keyframes button-particles {
+            0% {
+                background-position: left top;
+            }
+            100% {
+                background-position: right bottom;
+            }
+        }
+
+        /* Media query for screens less than 420px */
+        @media (max-width: 420px) {
+            .full-button {
+                justify-content: center; /* Center align buttons */
+                flex-direction: column; /* Stack buttons vertically */
+                gap: 10px; /* Adjust gap if needed */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="full-button">
+        <button class="left-button">
+            Book Now
+        </button>
+        <button class="right-button">
+            View My Gallery
+        </button>
+    </div>
+</body>
+</html>

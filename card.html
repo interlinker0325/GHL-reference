@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotated-card</title>
+</head>
+<body>
+    <div class="rotated-card-container">
+        <div class="rotated-card">
+            <h2>Card Title</h2>
+            <p>This is a description of the card. It can contain any content you like.</p>
+        </div>
+    </div>
+</body>
+<style>
+    .rotated-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Adjust height as needed */
+    perspective: 1000px; /* Adds perspective for 3D effect */
+}
+
+.rotated-card {
+    width: 300px; /* Adjust width as needed */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: rotateY(20deg); /* Rotate 20 degrees to the right */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.rotated-card:hover {
+    transform: rotateY(0deg); /* Reset rotation on hover */
+}
+.rotated-card {
+    background: linear-gradient(#000000, #000000) padding-box, /* Inner background (same color as the div) */
+                                                linear-gradient(135deg, #1ABCFE, #BD43F6) border-box;
+                                 /* Outer gradient background */
+}
+</style>
+</html>

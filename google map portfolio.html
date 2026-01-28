@@ -1,0 +1,162 @@
+<style>   
+    #auto_form {
+      text-align: center;
+    }
+    
+    #map_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1400px;
+      margin: 20px auto;
+    }
+    
+    
+    #image, #map {
+      width: calc(50% - 20px);
+      height: auto;
+      aspect-ratio: 3 / 2;
+      margin: 10px;
+      border-radius: 20px;
+      border: 2px solid lightblue;
+      box-sizing: border-box;
+    }
+
+    @media only screen and (max-width: 1420px) {
+      #inkuiJIUVgeHn6buwMYJ {
+        width: calc(100% - 20px);
+      }
+    }
+    
+    @media only screen and (max-width: 700px) {
+      #image, #map {
+        width: calc(100% - 20px);
+      }
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChjmUzz1dDvOyAx1-3fHEbytEa1M7P6kQ&libraries=places"></script>
+  <script>
+    (function() {
+      function initAutocomplete() {
+        console.log('initAutocomplete');
+        const input = document.getElementById('address');
+        const imageElement = document.getElementById('image');
+
+        if (!input || !imageElement) {
+          console.error('Required elements are not available');
+          return;
+        }
+
+        const autocomplete = new google.maps.places.Autocomplete(input, {
+          types: ['address'],
+          componentRestrictions: { country: 'us' }
+        });
+
+        const map = new google.maps.Map(document.getElementById('map'), {
+          center: { lat: 40.0583, lng: -74.4057 },
+          zoom: 13,
+        });
+
+        const marker = new google.maps.Marker({
+          map: map,
+        });
+
+        // Log input value on each key press
+        input.addEventListener('input', () => {
+          console.log('Input event:', input.value);
+        });
+
+        autocomplete.addListener('place_changed', () => {
+          const place = autocomplete.getPlace();
+          console.log('Place changed event:', place);
+          let isInNewJersey = false;
+
+          for (const component of place.address_components) {
+            if (component.short_name === 'NJ' || component.long_name === 'New Jersey') {
+              isInNewJersey = true;
+              break;
+            }
+          }
+
+          if (!isInNewJersey) {
+            alert('Please select an address within New Jersey.');
+            input.value = ''; // Clear the input value
+            return;
+          }
+
+          if (place.geometry) {
+            map.setCenter(place.geometry.location);
+            map.setZoom(14);
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+          } else {
+            console.log("Returned place contains no geometry");
+            return;
+          }
+
+          // Set the input value to the full address
+          input.value = place.formatted_address;
+
+          // Programmatically trigger input event to simulate manual input
+          const event = new Event('input', { bubbles: true });
+          input.dispatchEvent(event);
+
+          // Blur and refocus the input to clear the autocomplete suggestions
+          input.blur();
+          setTimeout(() => input.focus(), 0);
+
+          const address = input.value.replace(/ /g, '+');
+          imageElement.src = `https://maps.googleapis.com/maps/api/streetview?location=${address}&size=600x400&key=AIzaSyChjmUzz1dDvOyAx1-3fHEbytEa1M7P6kQ`;
+
+          console.log('Updated input value:', input.value);
+        });
+
+        // Handle 'Enter' key press
+        google.maps.event.addDomListener(input, 'keydown', function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault(); // Prevent form submission on Enter
+            console.log('Enter key pressed, input value:', input.value);
+
+            // Programmatically trigger input event to simulate manual input
+            const simulatedEvent = new Event('input', { bubbles: true });
+            input.dispatchEvent(simulatedEvent);
+
+            // Blur and refocus the input to clear the autocomplete suggestions
+            input.blur();
+            setTimeout(() => input.focus(), 0);
+          }
+        });
+      }
+
+      function checkElementsAndInitialize() {
+        const input = document.getElementById('address');
+        const mapContainer = document.getElementById('map');
+        if (input && mapContainer) {
+          initAutocomplete();
+        } else {
+          setTimeout(checkElementsAndInitialize, 100); // Check again after 100ms
+        }
+      }
+
+      // Using MutationObserver to ensure elements are available
+      const observer = new MutationObserver((mutations, obs) => {
+        const input = document.getElementById('address');
+        const mapContainer = document.getElementById('map');
+        if (input && mapContainer) {
+          checkElementsAndInitialize();
+          obs.disconnect(); // Stop observing once elements are found
+        }
+      });
+
+      observer.observe(document, { childList: true, subtree: true });
+
+      window.addEventListener('load', checkElementsAndInitialize);
+      document.addEventListener('DOMContentLoaded', checkElementsAndInitialize);
+    })();
+  </script>
+  <div id="auto_form">
+    <div id="map_container">
+      <img id="image" src="" alt="Street View Image will appear here">
+      <div id="map"></div>
+    </div>
+  </div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Div</title>
+    <style>
+        .rotated-card-container {
+            width: 100%;
+            height: auto;
+            border: 1px solid #cecece00;
+            border-radius: 25px;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 35px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+        .card-one {
+            transform: perspective(400px) rotateY(5deg) skew(2deg) rotate(-1deg);
+        }
+        .card-two {
+            transform: perspective(400px) rotateY(-5deg) skew(2deg) rotate(1deg);
+            margin-top: 20px;
+        }
+        .card-three {
+            transform: perspective(400px) rotateY(5deg) skew(2deg) rotate(-1deg);
+            margin-top: 20px;
+        }
+        .rotated-card-container:hover {
+            transform: rotateY(0deg);
+        }
+        .rotated-card-container {
+            background: linear-gradient(#000000, #000000) padding-box,
+            linear-gradient(135deg, #1ABCFE, #BD43F6) border-box;
+        }
+        .rotated-card-container h1 {
+            background: linear-gradient(to top, #ffffff, #505050);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 32px;
+        }
+        .rotated-card-container p {
+            font-size: 20px;
+            margin-top: 12px;
+        }
+
+        @media  screen and (max-width:767px) {
+            .rotated-card-container h1 {
+                font-size: 28px;
+            }            
+        }
+    </style>
+</head>
+<body>
+    <div class="rotated-card-container card-one">
+            <h1>SEO</h1>
+            <p>I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.</p>
+    </div>
+    <div class="rotated-card-container card-two">
+            <h1>Professional Team Leads</h1>
+            <p>Yes, I absolutely love solutions provided Finsweet team, and I use them in every single project.</p>
+    </div>
+    <div class="rotated-card-container card-three">
+            <h1>Client-First</h1>
+            <p>I also use Client First system for class naming structure, which allows me to build any project fast and conveniently.</p>
+    </div>
+</body>
+</html>

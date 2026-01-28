@@ -1,0 +1,416 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  html {
+  scroll-behavior: smooth;
+}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    
+    nav{
+      z-index: 99;
+      width: 100%;
+      background-color: #000000;
+      
+      /* background: #ffffff00; */
+    }
+    nav .wrapper{
+      position: relative;
+      padding: 0px;
+      height: 70px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .wrapper .logo a{
+      color: #f2f2f2;
+      font-size: 30px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .wrapper .nav-links{
+      display: inline-flex;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+    }
+    .nav-links li{
+      list-style: none;
+    }
+    .nav-links li a{
+      color: #f2f2f2;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: var(--contentfont);
+      font-weight: 500;
+      padding: 9px 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    
+    }
+      
+    
+      
+    .nav-links li a::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 5px;
+                background-color: #ffffff;
+                border-radius: 1px; /* Rounded corners */
+                transition: width 0.3s ease;
+            }
+      
+      
+      
+    .nav-links li a:hover{
+      color: #DF3627;
+    }
+      
+    
+    .nav-links li a:hover::after {
+        width: 15px;
+        border-radius: 3px;
+    } 
+      
+    .nav-links .mobile-item{
+      display: none;
+    }
+    
+    .wrapper .hand-made-btn{
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+      display: none;
+    }
+    .wrapper .hand-made-btn.close-hand-made-btn{
+      position: absolute;
+      right: 30px;
+      top: 10px;
+    }
+    
+    #section-72Cp6Kg-jQ{
+    position:absolute;
+      width:100%;
+    }
+    
+    #section-72Cp6Kg-jQ nav .header-part .wrapper .logo{
+    z-index:2;
+    }
+    
+    label.menu-hand-made-btn{
+    z-index:2;
+    }
+    
+    
+    
+    
+    @media screen and (max-width: 1150px) {
+    
+      
+      .wrapper .hand-made-btn{
+        display: block;
+      }
+      .logo img{
+        width: 190px;
+      }
+    
+    .wrapper label i.fa-bars::before {
+            content: "\f0c9"; 
+      }
+        
+    .wrapper label i.fa-times::before {
+            content: "\f00d"; 
+      }
+        
+      
+    
+    
+      .wrapper .nav-links{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        max-width: 300px;
+        top: 0;
+        left: -100%;
+        background: #000000;
+        display: block;
+        padding: 50px 10px;
+        line-height: 50px;
+        overflow-y: auto;
+        box-shadow: 0px 15px 15px rgba(0,0,0,0.18);
+        transition: all 0.3s ease;
+        margin:0;
+      }
+      /* custom scroll bar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #242526;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3A3B3C;
+      }
+      #menu-hand-made-btn:checked ~ .nav-links{
+        left: 0%;
+      }
+      #menu-hand-made-btn:checked ~ .hand-made-btn.menu-hand-made-btn{
+        display: none;
+      }
+      #close-hand-made-btn:checked ~ .hand-made-btn.menu-hand-made-btn{
+        display: block;
+      }
+      .nav-links li{
+        margin: 15px 10px;
+      }
+      .nav-links li a{
+        padding: 0 20px;
+        display: block;
+        font-size: 20px;
+        text-align: center;
+      }
+      .nav-links .drop-menu{
+        position: static;
+        opacity: 1;
+        top: 65px;
+        visibility: visible;
+        padding-left: 20px;
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        box-shadow: none;
+        transition: all 0.3s ease;
+      }
+      #showDrop:checked ~ .drop-menu,
+      #showMega:checked ~ .mega-box{
+        max-height: 100%;
+      }
+      .nav-links .desktop-item{
+        display: none;
+      }
+      .nav-links .mobile-item{
+        display: block;
+        color: #f2f2f2;
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+      .nav-links .mobile-item:hover{
+        background: #3A3B3C;
+      }
+      .drop-menu li{
+        margin: 0;
+      }
+      .drop-menu li a{
+        border-radius: 5px;
+        font-size: 18px;
+      }
+      .row .mega-links li{
+        margin: 0;
+      }
+      .content .row header{
+        font-size: 19px;
+      }
+    }
+    nav input{
+      display: none !important;
+    }
+    
+    .body-text{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      padding: 0 30px;
+    }
+    .body-text div{
+      font-size: 45px;
+      font-weight: 600;
+    }
+    .header-part{
+        display: flex;
+    }
+    
+    .logo img{
+        width: 350px;
+    }
+      
+      label.menu-hand-made-btn{
+      margin:0;
+      }
+    
+.beautiful-button {
+  position: relative;
+  display: inline-block;
+  background-color: #DF3627;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 36px;
+ /* Large padding */
+  cursor: pointer;
+ /* Cursor on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ /* Subtle shadow */
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+ /* Smooth transition */
+  margin-left: 30px;
+}
+
+/* Hover animation */
+.beautiful-button:hover {
+  background-color: #DF3627;
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+/* Click animation */
+.beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Shimmer animation */
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Particle animation */
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+    .nav-links button.beautiful-button {
+        margin: 20px auto; /* Center the button */
+        display: block; /* Ensure it behaves like a block element */
+        width: calc(100% - 40px); /* Ensure it fits nicely */
+        padding: 5px 12px; /* Adjust padding if necessary */
+    }
+}
+    
+:root{
+            --rolling-base-color:#8BFF78FF;
+        }
+    
+    
+@media screen and (max-width:1001px) {
+        .header-part{
+            justify-content: center;
+        }
+        
+    }
+    
+@media screen and (max-width:767px) {
+    .header-part{
+        flex-wrap: wrap;
+    }
+    
+    .hero_button_group{
+        text-align: center;
+    }
+
+    #row-Csjk8B0QPoQ{
+    margin-top:160px !important;
+    }
+}
+@media screen and (max-width:480px) {
+    .logo img{
+        width: 240px;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .logo img{
+        width: 200px;
+    }
+}
+    </style>
+    <nav>
+            <div class="header-part">
+                <div class="wrapper">
+                    <div class="logo"><a href="#"><img src="https://storage.googleapis.com/msgsndr/ANiMVjw5v8NxWfzKuOvF/media/67b6410e0dd810685df68f41.png" alt="logo"></a></div>
+                    <input type="radio" name="slider" id="menu-hand-made-btn">
+                    <input type="radio" name="slider" id="close-hand-made-btn">
+                    <ul class="nav-links">
+                      <label for="close-hand-made-btn" class="hand-made-btn close-hand-made-btn"><i class="fas fa-times"></i></label>
+                      <li><a id="home" href="#row-R1rvZvZdrF">HOME</a></li>
+                      <li><a id="portfolio" href="#row-Ldj1hVMqn1">PORTFOLIO</a></li>
+                      <li><a id="services" href="#col-K0R-IY7e3Z">SERVICES</a></li>
+                      <li><a id="location" href="#sub-heading-_uDXRL1WOr">LOCATION</a></li>
+                      <button class="beautiful-button">
+                        Book Now
+                      </button>
+                    </ul>         
+                    <label for="menu-hand-made-btn" class="hand-made-btn menu-hand-made-btn"><i class="fas fa-bars"></i></label>               
+                </div>
+            </div>
+        </nav>
+    <script>
+            // JavaScript to close the menu when any link is clicked
+            document.querySelectorAll('.nav-links li a').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.getElementById('menu-hand-made-btn').checked = false;
+                });
+            });
+        </script>
+    <script>
+        document.getElementById('services').addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the default action
+          var screenWidth = window.innerWidth;
+          var destination;
+      
+          if (screenWidth <= 768) { // Example: for screens smaller than or equal to 600px
+              destination = 'section-kk8OA3ZUgq';
+          } else {
+              destination = 'section-Fu39xFOBuu';
+          }
+          const targetElement = document.getElementById(destination);
+          targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+      });
+         document.getElementById('contact').addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the default action
+          var screenWidth = window.innerWidth;
+          var destination;
+      
+          if (screenWidth <= 768) { // Example: for screens smaller than or equal to 600px
+              destination = 'section-FCfVaYzxLk';
+          } else {
+              destination = 'section-1IHQzgFpkS';
+          }
+          const targetElement = document.getElementById(destination);
+          targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+    
+      });
+      </script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Div</title>
+    <style>
+        .automation-card-container {
+            width: 100%;
+            height: auto;
+            border: 1px solid #cecece00;
+            border-radius: 28px;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 35px;
+            background: linear-gradient(#000000, #000000) padding-box,
+            linear-gradient(135deg, #1ABCFE, #BD43F6) border-box;
+            transition: all 0.3s ease;
+        }
+        
+        .automation-card-container:hover {
+            background: linear-gradient(#00000000, #00000000) padding-box,
+            linear-gradient(135deg, #1ABCFE, #BD43F6) border-box;
+        }
+        .automation-card-container h1 {
+            background: linear-gradient(to top, #ffffff, #505050);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 24px;
+        }
+        .automation-card-container:hover h1 {
+            color: white;
+            -webkit-text-fill-color: white;
+        }
+        .card-two, 
+        .card-three,
+        .card-four {
+            margin-top: 20px;
+        }
+        @media  screen and (max-width:767px) {
+            .automation-card-container h1 {
+                font-size: 22px;
+            }            
+        }
+        @media  screen and (max-width:980px) {
+            .automation-card-container h1 {
+                font-size: 20px;
+            }            
+        }
+    </style>
+</head>
+<body>
+    <div class="automation-card-container card-one">
+            <h1>Advanced Automatic Follow Up </h1>
+    </div>
+    <div class="automation-card-container card-two">
+            <h1>Customizable Automation Workflows</h1>
+    </div>
+    <div class="automation-card-container card-three">
+            <h1>Real-time Data Analytics Dashboard</h1>
+    </div>
+    <div class="automation-card-container card-four">
+            <h1>Seamless Integration with Existing Systems</h1>
+    </div>
+</body>
+</html>

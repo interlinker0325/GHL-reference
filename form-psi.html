@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Input Form</title>
+    <style>
+        .total-input {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            width: 100%;
+        }
+
+        .input-container {
+            position: relative;
+            margin-top: 1.5rem;
+            width: 100%;
+            background-color: #ffffff1a;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            background-color: transparent;
+            padding: 1rem 1.5rem; 
+            font-size: 1rem; 
+            color: #111827; 
+            border-radius: 120px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="email"]::placeholder {
+            color: #6b7280; 
+        }
+
+        input[type="email"]:focus {
+            border-color: #111827; 
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(17, 24, 39, 0.05); 
+        }
+
+        .submit-button {
+            position: absolute;
+            inset-y: 0; 
+            right: 0.5rem; 
+            align-items: center;
+            justify-content: center;
+            right: -57px;
+            top: -5px;
+            border: 1px solid #fcfcfc00; 
+        }
+
+        .submit-button button {
+            aspect-ratio: 1; 
+            height: 100%;
+
+            background-color: #ffffff00; 
+            color: white;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+
+        }
+
+
+    </style>
+</head>
+<div class="total-input">
+
+<div class="input-container">
+    <input
+        type="email"
+        placeholder="Email address"
+        autocomplete="email"
+        aria-label="Email address"
+    >
+    <div class="submit-button">
+        <button
+          type="submit"
+          aria-label="Submit"
+        >
+          <img src="https://storage.googleapis.com/msgsndr/tA5886OOyxE8O0LwyFjI/media/6793fc9b6a58c45611189bf2.png" alt="">
+        </button>
+    </div>
+</div>
+
+</div>
+</html>

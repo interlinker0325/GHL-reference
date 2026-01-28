@@ -1,0 +1,31 @@
+<style>
+    .google-map {
+        display: flex;
+        justify-content: center; /* Center the iframe horizontally */
+        border-radius: 12px;
+        overflow: hidden; /* Hide overflow to maintain border radius */
+    }
+
+    .map {
+        width: 86%; /* Set width to 80% of the container */
+        height: 320px; /* Set height for larger screens */
+        border: 0; /* Remove default border */
+    }
+
+    @media screen and (max-width: 480px) {
+        .map {
+            width: 96%; /* Adjust width for smaller screens */
+            height: 220px; /* Adjust height for smaller screens */
+        }
+    }
+</style>
+
+<div class="google-map">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.1538805985892!2d-74.2896093!3d40.6926085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3ad8f7fb3b3c5%3A0x6da19df2a7f5d0f8!2sPhenix%20Salon%20Suites%20Union!5e0!3m2!1sen!2s!4v1740082215530!5m2!1sen!2s" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade" 
+        class="map">
+    </iframe>
+</div>

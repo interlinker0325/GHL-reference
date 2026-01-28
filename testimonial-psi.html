@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Slider HTML and CSS | CodingNepal</title>
+  <!-- Linking SwiperJS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    /* Importing Google Font - Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("https://storage.googleapis.com/msgsndr/OENgJjq7Qu9Cm9TxvF6s/media/668d27ba74ee2e6b7572faf4.jpeg") #030728 no-repeat center;
+}
+
+.slider-wrapper {
+  overflow: hidden;
+  max-width: 1600px;
+  margin: 0 70px 55px;
+  /* position: relative; */
+}
+
+.card-list{
+    position: relative;
+}
+
+.card-list .card-item {
+  height: auto;
+  color: #fff;
+  user-select: none;
+  padding: 35px 35px 80px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  border-radius: 20px;
+  backdrop-filter: blur(30px);
+  background: rgb(255 255 255 / 14%);
+  /* border: 1px solid rgba(255, 255, 255, 0.5); */
+}
+
+.slider-wrapper .swiper-pagination-bullet {
+  background: #fff;
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+}
+
+.slider-wrapper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.slider-wrapper .swiper-slide-button {
+  color: #fff;
+  margin-top: -55px;
+  transition: 0.2s ease;
+}
+
+.slider-wrapper .swiper-slide-button:hover {
+  color: #c3c9ff;
+}
+
+@media (max-width: 768px) {
+  .slider-wrapper {
+    margin: 0 10px 40px;
+  }
+
+  .slider-wrapper .swiper-slide-button {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+.dis-flex{
+    display: flex;
+}
+
+
+.jus-center{
+    justify-content: center;
+}
+
+.ali-center{
+    align-items: center;
+}
+
+
+
+.testimal-slider-img {
+    display: block;
+    width: 56px;
+    height: 56px;
+    /* margin: auto; */
+    border-radius: 50%;
+}
+
+
+.feedback-stars {
+  position: absolute;
+  top: 25px; /* Adjust top position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px; /* Adjust size as needed */
+  color: white; /* White color for stars */
+  text-align: center;
+}
+
+.testimonial-slider-profile{
+    position: absolute;
+    bottom: 32px;
+}
+
+
+</style>
+<body>
+  <div class="container swiper">
+    <div class="slider-wrapper">
+      <div class="card-list swiper-wrapper">
+        <div class="card-item swiper-slide">
+            <div class="feedback-stars">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+          <p style="margin-top: 35px; font-weight: 400; font-size: 18px; font-family: Roboto; text-align: center; margin-bottom: 25px; line-height: 27px;">Their approach was not only efficient but also incredibly result-driven. They demonstrated a deep understanding of our industry and swiftly implemented strategies that significantly boosted our lead acquisition and management processes. Their team's professionalism and dedication were evident throughout, making them an invaluable partner in our business growth.</p>
+          <div class="testimonial-slider-profile">
+            <div class="dis-flex jus-center">
+                <img class="testimal-slider-img" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/preview-production-assets/funnel/img/img_300x300.png" alt="">
+                <div class="dis-flex ali-center">
+                    <div class="time-change" style="margin-left: 10px; text-align: left;">
+                        <div style="font-weight: 600; font-size: 16px; font-family: Roboto; margin-bottom: 5px;">James W.</div>
+                        <div style="font-weight: 400; font-size: 16px; font-family: Roboto;">Director of Sales</div>
+                    </div>                                   
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item swiper-slide">
+            <div class="feedback-stars">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+          <p style="margin-top: 35px; font-weight: 400; font-size: 18px; font-family: Roboto; text-align: center; margin-bottom: 25px; line-height: 27px;">Partnering with FLC Stragesties was a seamless experience of vision alignment and expert design integration. They perfectly captured our vision, enriched it with their professional design expertise, and delivered us a website that not only exceeded expectations but also significantly boosted our conversion rates.</p>
+          <div class="testimonial-slider-profile">
+            <div class="dis-flex jus-center">
+                <img class="testimal-slider-img" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/preview-production-assets/funnel/img/img_300x300.png" alt="">
+                <div class="dis-flex ali-center">
+                    <div class="time-change" style="margin-left: 10px; text-align: left;">
+                        <div style="font-weight: 600; font-size: 16px; font-family: Roboto; margin-bottom: 5px;">Michelle S.</div>
+                        <div style="font-weight: 400; font-size: 16px; font-family: Roboto;">Chief Design Officer</div>
+                    </div>                                   
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item swiper-slide">
+            <div class="feedback-stars">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+          <p style="margin-top: 35px; font-weight: 400; font-size: 18px; font-family: Roboto; text-align: center; margin-bottom: 25px; line-height: 27px;">FLC Strategies integrated approach encompassing expert lead management, web development, AI implementation, and robust software systems. Our business has now undergone a remarkable transformation. They've optimized our conversion rates and enhanced CLV by successfully converting leads into loyal, high-paying customers.
+        </p>
+          <div class="testimonial-slider-profile">
+            <div class="dis-flex jus-center">
+                <img class="testimal-slider-img" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/preview-production-assets/funnel/img/img_300x300.png" alt="">
+                <div class="dis-flex ali-center">
+                    <div class="time-change" style="margin-left: 10px; text-align: left;">
+                        <div style="font-weight: 600; font-size: 16px; font-family: Roboto; margin-bottom: 5px;">Andrew T.</div>
+                        <div style="font-weight: 400; font-size: 16px; font-family: Roboto;">Executive Marketing Director</div>
+                    </div>                                   
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item swiper-slide">
+            <div class="feedback-stars">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+          <p style="margin-top: 35px; font-weight: 400; font-size: 18px; font-family: Roboto; text-align: center; margin-bottom: 25px; line-height: 27px;">Extremely knowledgeable in all aspects of real state . She takes great pride in her work and always puts her best foot forward to attend to you in order to get fast viewings in homes you have shown interest in. I highly recommend Kara services; she’s a hustler and works extremely hard to find a home in
+            which best fits you.</p>
+          <div class="testimonial-slider-profile">
+            <div class="dis-flex jus-center">
+                <img class="testimal-slider-img" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/preview-production-assets/funnel/img/img_300x300.png" alt="">
+                <div class="dis-flex ali-center">
+                    <div class="time-change" style="margin-left: 10px; text-align: left;">
+                        <div style="font-weight: 600; font-size: 16px; font-family: Roboto; margin-bottom: 5px;">Bethania Diaz</div>
+                        <div style="font-weight: 400; font-size: 16px; font-family: Roboto;">Zillow Review</div>
+                    </div>                                   
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item swiper-slide">
+            <div class="feedback-stars">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+          <p style="margin-top: 35px; font-weight: 400; font-size: 18px; font-family: Roboto; text-align: center; margin-bottom: 25px; line-height: 27px;">Excellent salesperson, take you beyond my expectations in the whole process of buying my new home recently. She has been highly knowledgeable and dependable in the whole process including property identification, price negotiation, contracting and closing of the mortgage.</p>
+          <div class="testimonial-slider-profile">
+            <div class="dis-flex jus-center">
+                <img class="testimal-slider-img" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/preview-production-assets/funnel/img/img_300x300.png" alt="">
+                <div class="dis-flex ali-center">
+                    <div class="time-change" style="margin-left: 10px; text-align: left;">
+                        <div style="font-weight: 600; font-size: 16px; font-family: Roboto; margin-bottom: 5px;">Agata Santiago</div>
+                        <div style="font-weight: 400; font-size: 16px; font-family: Roboto;">Google Review</div>
+                    </div>                                   
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-item swiper-slide">
+            <div class="feedback-stars">
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+          <p style="margin-top: 35px; font-weight: 400; font-size: 18px; font-family: Roboto; text-align: center; margin-bottom: 25px; line-height: 27px;">Kara took charge and was able to manage a very difficult situation when selling our home. I am located out of state and Kara was able to manage getting contractors and other resources to make sure our estate sale proceeded on a timely basis. Kara is very knowledgeable in the Union county area and was spot on with the appraise value of housing market.</p>
+          <div class="testimonial-slider-profile">
+            <div class="dis-flex jus-center">
+                <img class="testimal-slider-img" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://storage.googleapis.com/preview-production-assets/funnel/img/img_300x300.png" alt="">
+                <div class="dis-flex ali-center">
+                    <div class="time-change" style="margin-left: 10px; text-align: left;">
+                        <div style="font-weight: 600; font-size: 16px; font-family: Roboto; margin-bottom: 5px;">PJP Heating</div>
+                        <div style="font-weight: 400; font-size: 16px; font-family: Roboto;">Chief Design Officer</div>
+                    </div>                                   
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-slide-button swiper-button-prev"></div>
+      <div class="swiper-slide-button swiper-button-next"></div>
+    </div>
+  </div>
+
+  <!-- Linking SwiperJS script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Linking custom script -->
+<script>
+    const swiper = new Swiper('.slider-wrapper', {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 30,
+
+  // Pagination bullets
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // Responsive breakpoints
+  breakpoints: {
+    0: {
+      slidesPerView: 1
+    },
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 3
+    }
+  }
+});
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

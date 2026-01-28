@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Input Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f4f6; /* Tailwind's bg-gray-100 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .custom-input {
+            border-radius: 120px; /* Custom border radius */
+        }
+    </style>
+</head>
+<body>
+
+<div class="custom-form">
+    <input
+        type="email"
+        placeholder="Email address"
+        autocomplete="email"
+        aria-label="Email address"
+        class="custom-input"
+    >
+    <button
+        type="submit"
+        aria-label="Submit"
+        class="submit-button"
+    >
+        <img src="https://storage.googleapis.com/msgsndr/tA5886OOyxE8O0LwyFjI/media/6793fc9b6a58c45611189bf2.png" alt="Submit">
+    </button>
+</div>
+</body>
+</html>
